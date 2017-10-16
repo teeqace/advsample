@@ -1,0 +1,30 @@
+[
+  {
+    "id": "introduction",
+    "name": "始まり",
+    "talks": ["introduction:talk001", "introduction:talk002", "introduction:talk003"],
+    "moves": ["scene1", "scene2", "scene3"],
+    "firstScript": "event:introduction"
+  },
+  {
+    "id": "scene1",
+    "name": "シーン１本屋",
+    "talks": [],
+    "moves": ["scene2", "scene3"],
+    "firstScript": "scenestart:bookstore"
+  },
+  {
+    "id": "scene2",
+    "name": "シーン２公園",
+    "talks": ["scene-park:talk1"],
+    "moves": ["scene1", "scene3"],
+    "firstScript": "scenestart:park"
+  },
+  {
+    "id": "scene3",
+    "name": "シーン３神社",
+    "talks": ["jinja:talk0"],
+    "moves": ["scene1", "scene2"],
+    "firstScript": "scenestart:jinja"
+  }
+]

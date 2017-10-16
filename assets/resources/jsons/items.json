@@ -1,0 +1,32 @@
+[
+  {
+    "id": "knife",
+    "name": "包丁",
+    "imageIndex": 0,
+    "description": "殺人現場に落ちていたもの。\n血痕はない。"
+  },
+  {
+    "id": "magazine",
+    "name": "雑誌",
+    "imageIndex": 1,
+    "description": "ゲスな話題の記事がたくさん載っている。\n発行日は4月14日"
+  },
+  {
+    "id": "golf",
+    "name": "ゴルフクラブ",
+    "imageIndex": 2,
+    "description": "殺人現場に落ちていたもの。\nこれで被害者は殺害されたと考えられている。"
+  },
+  {
+    "id": "letter",
+    "name": "手紙",
+    "imageIndex": 3,
+    "description": "殺害現場より発見\n「おまえの秘密は知っている。公表されたくなければ4月13日の夜9時に神社までくることだ。」"
+  },
+  {
+    "id": "chief",
+    "name": "ハンカチ",
+    "imageIndex": 4,
+    "description": "殺人現場に落ちていたもの。\n香水の香りが少しする。"
+  }
+]

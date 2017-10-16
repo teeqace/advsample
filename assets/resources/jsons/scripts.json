@@ -1,0 +1,424 @@
+[
+  {
+    "id": "event:introduction",
+    "name": "ゲーム開始時のイベントスクリプト",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "chara", "action": "reset"},
+      {"type": "bg", "action": "open"},
+      {"type": "text", "action": "disp", "data":{"name":"男１", "text":"123456789012345678901234567890\nみなさん、初めまして\n「\\n」で改行して少しお話をしますね。\nイベント中は下のメニューは押せません。端っこで自動的に改行されるはず。\n画面タップで次に進みますよ。"}},
+      {"type": "chara", "action": "show", "data":[{"index":0,"x":-110,"y":-68,"sx":-1,"sy":1,"opacity":127,"time":2},{"index":1,"x":165,"y":-88,"sx":1,"sy":1,"opacity":180,"time":0}]},
+      {"type": "text", "action": "disp", "data":{"name":"男１", "speed":10, "text":"2ページ目のセリフだよ\n話すスピードがゆっくりに\n\n１行開けます\n画面タップですぐに全部のテキストが\n表示されるはずですよ。。。。。。。"}},
+      {"type": "text", "action": "disp", "data":{"name":"女１", "speed":1000, "text":"私にもしゃべらせなさいよ！\n話が長いのよ！\n\n\n要点をまとめて、短時間で話すのが大事なのよ！！"}},
+      {"type": "bg", "action": "fadeout", "color":"#FF0000", "time":1},
+      {"type": "text", "action": "clear"},
+      {"type": "bg", "action": "fadein", "bgIndex":3, "time":2},
+      {"type": "chara", "action": "hide", "data": [{"index":0,"time":0},{"index":1,"time":2}]},
+      {"type": "text", "action": "disp", "data":{"name":"", "speed":20, "auto":1, "text":"このメッセージは自動的に次のイベントへ進みます"}},
+      {"type": "bg", "action": "crossfade"},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "speed":1000, "text":"さて、これからどうする？（このメッセージを送ると下のメニューが押せるようになる）"}},
+      {"type": "common", "action": "itemAdd", "id":"knife"},
+      {"type": "common", "action": "itemAdd", "id":"golf"},
+      {"type": "common", "action": "itemAdd", "id":"chief"},
+      {"type": "text", "action": "clear"},
+      {"type": "common", "action": "end"}
+    ]
+  },
+  {
+    "id": "introduction:talk001",
+    "name": "会話のテスト",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"会話のテストしたいけど話す相手がいないな・・・。"}},
+      {"type": "text", "action": "clear"},
+      {"type": "common", "action": "end"}
+    ]
+  },
+  {
+    "id": "introduction:talk002",
+    "name": "このゲームについて",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "text", "action": "disp", "data":{"name":"ティーク", "text":"ノベルゲーム作りたくて作ったものの、肝心のストーリーは作れないんですよね。"}},
+      {"type": "text", "action": "disp", "data":{"name":"ティーク", "text":"必要な機能って何があるのかな？？"}},
+      {"type": "text", "action": "clear"},
+      {"type": "common", "action": "end"}
+    ]
+  },
+  {
+    "id": "introduction:talk003",
+    "name": "何について話そうかなー長いタイトルをつけてみるよ",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "text", "action": "disp", "data":{"name":"ティーク", "auto":1, "text":"会話の途中で光らせたりとかね"}},
+      {"type": "bg", "action": "flash"},
+      {"type": "text", "action": "disp", "data":{"name":"ティーク", "auto":1, "text":"他にも会話中に"}},
+      {"type": "bg", "action": "shake"},
+      {"type": "text", "action": "disp", "data":{"name":"ティーク", "text":"揺らしたり"}},
+      {"type": "text", "action": "disp", "data":{"name":"ティーク", "auto":1, "text":"背景を別のものに変えたりね"}},
+      {"type": "bg", "action": "change", "bgIndex":2},
+      {"type": "common", "action": "wait", "time": 2},
+      {"type": "text", "action": "disp", "data":{"name":"ティーク", "text":"今背景変更後、2秒ウェイト入れました"}},
+      {"type": "bg", "action": "change", "bgIndex":1},
+      {"type": "text", "action": "disp", "data":{"name":"ティーク", "text":"イベント中（スクリプト実行中）は下のメニューは押せないようにしてます。"}},
+      {"type": "text", "action": "clear"},
+      {"type": "common", "action": "end"}
+    ]
+  },
+  {
+    "id": "scenestart:bookstore",
+    "name": "本屋",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "bg", "action": "change", "bgIndex":7},
+      {"type": "common", "action": "if-flag-start", "id":"park:talk2end", "val":true, "flagKey":"1"},
+      {"type": "chara", "action": "show", "data":[{"index":3}]},
+      {"type": "common", "action": "if-flag-end", "flagKey":"1"},
+      {"type": "allEffect", "action": "blackIn", "time": 1},
+      {"type": "common", "action": "if-flag-start", "id":"park:talk2end", "val":false, "flagKey":"1"},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"本屋についたな"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "auto":1, "text":"でも誰もいないな・・・"}},
+      {"type": "common", "action": "if-flag-end", "flagKey":"1"},
+      {"type": "common", "action": "if-flag-start", "id":"book:womanappeared", "val":true, "flagKey":"3"},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"本屋についたな\n\n・・さっきの女の人は・・・まだいるな"}},
+      {"type": "common", "action": "if-flag-end", "flagKey":"3"},
+      {"type": "common", "action": "if-flag-start", "id":"book:womanappeared", "val":false, "flagKey":"1"},
+      {"type": "common", "action": "if-flag-start", "id":"park:talk2end", "val":true, "flagKey":"2"},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"本屋についたな\n\n・・・あ、誰かいるぞ"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "auto":1, "text":"さっき公園で男が話してた人だな"}},
+      {"type": "common", "action": "addTalk", "id": "scene-book:talk1"},
+      {"type": "common", "action": "addTalk", "id": "scene-book:talk2"},
+      {"type": "common", "action": "flagOn", "id": "book:womanappeared"},
+      {"type": "common", "action": "if-flag-end", "flagKey":"2"},
+      {"type": "common", "action": "if-flag-end", "flagKey":"1"},
+      {"type": "common", "action": "end"}
+    ]
+  },
+  {
+    "id": "scene-book:talk1",
+    "name": "オススメの本について",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"オススメの本ありますか？"}},
+      {"type": "text", "action": "disp", "data":{"name":"女", "text":"今は何と言っても週刊文春よね！\n次の文春砲はどうなるのかしら！？"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"（・・・ただの噂好きの人みたいだ）"}},
+      {"type": "common", "action": "itemAdd", "id":"magazine"},
+      {"type": "text", "action": "disp", "data":{"name":"女", "text":"特別に一冊あげるから、読んでみてよ。"}},
+      {"type": "text", "action": "disp", "data":{"name":"女", "text":"「所持品」を確認したらアイテムが一つ増えているはずよ。"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"「所持品」、確認してみるか"}},
+      {"type": "common", "action": "end"}
+    ]
+  },
+  {
+    "id": "scene-book:talk2",
+    "name": "事件について",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"すみません、事件のことについて聞きたいんですけど"}},
+      {"type": "text", "action": "disp", "data":{"name":"女", "text":"私は何も知らないわ"}},
+      {"type": "text", "action": "disp", "data":{"name":"女", "text":"その日はずっと仕事でここにいたし・・・"}},
+      {"type": "text", "action": "disp", "data":{"name":"女", "text":"だから、あの人を刺し殺した犯人は見てないの"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"あれ、ちょっと待てよ？"}},
+      {"type": "common", "action": "chioce", "data":[{"label":"仕事について", "id":"scene-book:talk2-choice1"}, {"label":"犯人を見てないことについて", "id":"scene-book:talk2-choice2"}]},
+      {"type": "text", "action": "disp", "data":{"name":"女", "text":"こんな風に、選択肢による分岐もできるはずよ"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"それは面白いですね。"}},
+      {"type": "text", "action": "clear"},
+      {"type": "common", "action": "end"}
+    ]
+  },
+  {
+    "id": "scene-book:talk2-choice1",
+    "name": "仕事について",
+    "script":[
+      {"type": "common", "action": "choice-start"},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"ずっと仕事してたって言ってましたけど、さっきまでいなかったじゃないですか？"}},
+      {"type": "text", "action": "disp", "data":{"name":"女", "text":"それは今日の話でしょ？"}},
+      {"type": "text", "action": "disp", "data":{"name":"女", "text":"殺人事件があった日はずっと仕事だったの\n同僚が証明してくれるわよ"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"あぁ、そうですか・・・"}},
+      {"type": "common", "action": "choice-end"}
+    ]
+  },
+  {
+    "id": "scene-book:talk2-choice2",
+    "name": "犯人を見てないことについて",
+    "script":[
+      {"type": "common", "action": "choice-start"},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"被害者は鈍器で殴られて死んだんですよ？どうして刺し殺したと？"}},
+      {"type": "text", "action": "disp", "data":{"name":"女", "text":"え？\nあ、あれ、私そんなこと言ったかしら？"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"はい、今はっきりと「あの人を刺し殺した犯人」と言いましたよ。"}},
+      {"type": "text", "action": "disp", "data":{"name":"女", "text":"えっと、何か勘違いしてたみたいね。\nとにかく犯人は見てないわ。"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"（怪しいな・・・）"}},
+      {"type": "common", "action": "choice-end"}
+    ]
+  },
+  {
+    "id": "scenestart:park",
+    "name": "公園",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "bg", "action": "change", "bgIndex":5},
+      {"type": "chara", "action": "show", "data":[{"index":0}]},
+      {"type": "allEffect", "action": "blackIn", "time": 1},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "auto":1, "text":"公園についたな\n\n・・・誰かいるぞ"}},
+      {"type": "common", "action": "end"}
+    ]
+  },
+  {
+    "id": "scene-park:talk1",
+    "name": "あなたは・・・？",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"すみません、あなたは一体・・・？"}},
+      {"type": "text", "action": "disp", "data":{"name":"男", "text":"私は会話イベントのテスト用のキャラクター\n名前もないような奴さ"}},
+      {"type": "text", "action": "disp", "data":{"name":"男", "text":"この会話後、会話できることを増やしておくからさ、もう一度話しかけてみてよ"}},
+      {"type": "common", "action": "addTalk", "id": "scene-park:talk2"},
+      {"type": "common", "action": "end"}
+    ]
+  },
+  {
+    "id": "scene-park:talk2",
+    "name": "2回目の会話",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"改めまして、こんにちは"}},
+      {"type": "text", "action": "disp", "data":{"name":"男", "text":"また話しかけてくれたね、ありがとう"}},
+      {"type": "text", "action": "disp", "data":{"name":"男", "text":"こんな感じで、会話を増やすこともできるんだ"}},
+      {"type": "text", "action": "disp", "data":{"name":"男", "text":"今度はフラグを一つ立てておくからさ、本屋に行ってみなよ\n僕の友達がいるはずだからさ"}},
+      {"type": "common", "action": "flagOn", "id": "park:talk2end"},
+      {"type": "common", "action": "end"}
+    ]
+  },
+  {
+    "id": "scenestart:jinja",
+    "name": "神社",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "bg", "action": "change", "bgIndex":6},
+      {"type": "chara", "action": "show", "data":[{"index":1}, {"index":2}]},
+      {"type": "allEffect", "action": "blackIn", "time": 1},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "auto":1, "text":"神社についたな"}},
+      {"type": "common", "action": "end"}
+    ]
+  },
+  {
+    "id": "item:knife:scene1",
+    "name": "本屋で包丁",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "common", "action": "if-flag-start", "id":"book:womanappeared", "val":false, "flagKey":"1"},
+      {"type": "text", "action": "disp", "data":{"name":"", "text":"特に何も起きない"}},
+      {"type": "common", "action": "if-flag-end", "flagKey":"1"},
+      {"type": "common", "action": "if-flag-start", "id":"book:womanappeared", "val":true, "flagKey":"1"},
+      {"type": "text", "action": "disp", "data":{"name":"女", "text":"きゃっ！\nな、何！？包丁なんて取り出して！"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"あ、いえ\nなんでもないです"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"（むやみに包丁なんて、人に見せるもんじゃないな・・・。）"}},
+      {"type": "common", "action": "if-flag-end", "flagKey":"1"},
+      {"type": "common", "action": "end"}
+    ]
+  },
+  {
+    "id": "item:magazine:scene1",
+    "name": "本屋で雑誌",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "text", "action": "disp", "data":{"name":"女", "text":"面白いでしょ！？\nあの人気タレントＢが不倫してたなんてね〜♪"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"ずいぶん楽しそうですね"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"あ、この雑誌、事件のあった翌日に発売されたんですね。"}},
+      {"type": "text", "action": "disp", "data":{"name":"女", "text":"そういえばそうね"}},
+      {"type": "text", "action": "disp", "data":{"name":"女", "text":"ってことは死んだあの人も、\nこの不倫騒動のことを知ることなく、この世を去ったのね・・・"}},
+      {"type": "text", "action": "disp", "data":{"name":"女", "text":"かわいそうに・・・"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"殺されたことの方がよっぽどかわいそうですけどね"}},
+      {"type": "common", "action": "end"}
+    ]
+  },
+  {
+    "id": "item:knife:scene2",
+    "name": "公園で包丁",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "text", "action": "disp", "data":{"name":"男", "text":"おっと、ずいぶん物騒なもん持ってるなぁ・・・"}},
+      {"type": "text", "action": "disp", "data":{"name":"男", "text":"じゅーとー・・・ほーいはん？ってやつだぞ！"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"「銃刀法違反」に自信がなさげですね。"}},
+      {"type": "text", "action": "disp", "data":{"name":"男", "text":"今回の殺人事件に関係あるのか？"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"現場には落ちてたんですけどね、\nこれは凶器ではないらしいですよ。"}},
+      {"type": "text", "action": "disp", "data":{"name":"男", "text":"じゃあ一切関係なしだな！絶対に！"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"今度はすごい自信ですね。"}},
+      {"type": "common", "action": "end"}
+    ]
+  },
+  {
+    "id": "item:golf:scene2",
+    "name": "公園でゴルフ",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "text", "action": "disp", "data":{"name":"男", "text":"ここはゴルフ禁止だぞ！"}},
+      {"type": "text", "action": "disp", "data":{"name":"男", "text":"他にもサッカー、野球、犬の散歩、花火も禁止だ！"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"じゃあ何もできないですね、この公園。\n何のためにあるんでしょうね。"}},
+      {"type": "text", "action": "disp", "data":{"name":"男", "text":"俺みたいに、家族にばれないように仕事に行くふりをする人が集まるのさ。"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"イヤな公園ですね。"}},
+      {"type": "text", "action": "disp", "data":{"name":"男", "text":"しょうがないだろ！行くあてなんて、どこにもないんだ！！！"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"この公園「大声で騒ぐ」のも禁止らしいですよ。"}},
+      {"type": "common", "action": "end"}
+    ]
+  },
+  {
+    "id": "item:chief:scene2",
+    "name": "公園でハンカチ",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "text", "action": "disp", "data":{"name":"男", "text":"かわいいハンカチを持ってるんだな。\n変わった趣味だな。"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"僕のではないですよ、殺人現場に落ちてたんです。"}},
+      {"type": "text", "action": "disp", "data":{"name":"男", "text":"殺人現場に落ちていたものを拾って持ち歩いてるんだな。\n変わった趣味だな。"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"今回の事件を調査しているからですよ。\n普段ならこんなことしませんよ。"}},
+      {"type": "text", "action": "disp", "data":{"name":"男", "text":"警察でもないのに殺人事件の調査をしてるのか。\n変わった趣味だな。"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"まぁ、真犯人を捕まえないと、友人が殺人の容疑をかけられているので。"}},
+      {"type": "text", "action": "disp", "data":{"name":"男", "text":"友達の趣味も変わってるんだな！"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"この公園「大声で騒ぐ」のも禁止らしいですよ。"}},
+      {"type": "text", "action": "disp", "data":{"name":"男", "text":"いちいち揚げ足をとるなよ\nイヤな趣味だな。"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"そうですね\n（それはこっちのセリフだよ・・・）"}},
+      {"type": "common", "action": "end"}
+    ]
+  },
+  {
+    "id": "jinja:talk0",
+    "name": "話しかける",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"すみませーん"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK左", "text":"・・・だよねー"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK右", "text":"まじウケるー"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"あのー"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK左", "text":"それにさー・・・"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK右", "text":"ちょっ、ヤバくなーい？"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"話に夢中で、聞こえてない・・・\n何か気をひくものないかな"}},
+      {"type": "common", "action": "end"}
+    ]
+  },
+  {
+    "id": "item:magazine:scene3",
+    "name": "神社で雑誌",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "text", "action": "disp", "data":{"name":"JK左", "text":"あ！その雑誌！"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK右", "text":"タレントＢの不倫騒動の！"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"予想以上の食いつきだな・・・"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK左", "text":"なに、おじさん？"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK右", "text":"ウチらに何か用？"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"（おじさん・・・！）\nこの前の殺人事件について調べてるんだけど、話をきかせてもらえないかな？"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK左", "text":"殺人事件だって！"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK右", "text":"なにそれ、ウケる！\n興味津々ー！\n恋はスリルショックサスペンスー！"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"（人のうわさ話は\nこうも人を惹きつけるものなのか）"}},
+      {"type": "common", "action": "delTalk", "id": "jinja:talk0"},
+      {"type": "common", "action": "addTalk", "id": "jinja:talk1"},
+      {"type": "common", "action": "addTalk", "id": "jinja:talk2"},
+      {"type": "common", "action": "end"}
+    ]
+  },
+  {
+    "id": "jinja:talk1",
+    "name": "君たちは？",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"君たちは一体？"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK左", "text":"「君たち」だってー！"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK右", "text":"セリフくさーい！ウケるー！\nてかナンパ？とかマジ勘弁なんですけどー！"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"（イラッとくるなぁ）\nそれで、君たちは何者なのかな？"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK左", "text":"ウチら普通のJKっしょ！"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK右", "text":"マジぱないギャルみたいなー"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"（なんかしゃべり方が一昔前のギャルのイメージだし）"}},
+      {"type": "common", "action": "end"}
+    ]
+  },
+  {
+    "id": "jinja:talk2",
+    "name": "なぜこんなところに？",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"なんで神社でおしゃべりしてるのかな？"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK左", "text":"なに？ウチらは神社にきちゃダメなの？"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK右", "text":"お参り禁止令発動ー！みたいなー？"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK左", "text":"きゃははは！何それー！"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"（話がすすまない）"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK左", "text":"別に理由はないけど、ウチら放課後はいつもここでしゃべってるんだよねー"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK右", "text":"そーそー、ウチらマブダチ？ずっ友？みたいなー"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"ってことは事件当日も？"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK左", "text":"あー、なんか神社でゴルフクラブでバコーンってやつ？"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK右", "text":"あれ、マジやばかったねー！"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"その話、詳しく聞かせて！"}},
+      {"type": "common", "action": "addTalk", "id": "jinja:talk3"},
+      {"type": "common", "action": "end"}
+    ]
+  },
+  {
+    "id": "jinja:talk3",
+    "name": "事件当日について",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"まさか君たち、事件当日もここに！？"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK左", "text":"うん、いたよー"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK右", "text":"いつもみたいに喋ってたら境内の裏から叫び声が聞こえてきてー"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"叫び声？"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK左", "text":"うん「うぎゃー！」って"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK右", "text":"「うぎゃー」って、マジウケるんですけど！\n「うぎゃー」って！！"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK左", "text":"で、見に行ったら・・・"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK右", "text":"死んでるよねーそりゃ\n「うぎゃー」だもん、マジ断末魔って感じー"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"他に人はいなかったの？"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK左", "text":"いなかったねー"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK右", "text":"「飛ぶ鳥跡を濁さず」的なー"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK左", "text":"いや、濁ってるから！人死んでるから！"}},
+      {"type": "text", "action": "disp", "data":{"name":"JK右", "text":"ウケるー！"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"いまひとつ緊張感に欠けるけど、重要な証人だな。\nこの辺を調べてみるか・・・"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"（調べるときは「調べる」ボタンを押して、調べたいところをタップするんだっけ）"}},
+      {"type": "common", "action": "end"}
+    ]
+  },
+  {
+    "id": "check:jinja:keidai",
+    "name": "神社で境内をチェック",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"神社の境内がある。"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"小さな神社だし、何がまつられているかもわからないけど、\nそれでもまぁ、なんとなくありがたい気はする。"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "speed":10, "text":"・・・・・・"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"こんなところでよくもまぁ、人を殺そうなんて考えたもんだ"}},
+      {"type": "common", "action": "checkEnd"},
+      {"type": "common", "action": "end"}
+    ]
+  },
+  {
+    "id": "check:jinja:saisen",
+    "name": "賽銭箱チェック",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"えーと、お参りの仕方は・・・"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"二礼二拍一礼、だっけ？"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"こういう決まりごとは、\n普段からやらない人間にとっては、非常にめんどくさいし、すぐに忘れちゃうものだけど\nやることでなんとなく気が引き締まるんだよな。"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"賽銭箱・・・はさすがに調べられないな"}},
+      {"type": "common", "action": "checkEnd"},
+      {"type": "common", "action": "end"}
+    ]
+  },
+  {
+    "id": "check:jinja:letter",
+    "name": "手紙チェック",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "common", "action": "if-flag-start", "id":"jinja:letter-checked", "val":true, "flagKey":"1"},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"さっき手紙が落ちていた付近だ"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"手紙以外に特にきになるところはないな。"}},
+      {"type": "common", "action": "if-flag-end", "flagKey":"1"},
+      {"type": "common", "action": "if-flag-start", "id":"jinja:letter-checked", "val":false, "flagKey":"1"},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"ん、何か落ちてるな。\n・・・手紙かな？"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"人の手紙を見るのはちょっと気がひけるけど、調査のためだ！"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"なになに・・・\n「おまえの秘密は知っている。公表されたくなければ4月13日の夜9時に神社までくることだ。」"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"4月13日！\n事件当日じゃないか！"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"これは重要な手がかりになりそうだな"}},
+      {"type": "text", "action": "disp", "data":{"name":"", "text":"手紙を拾った"}},
+      {"type": "common", "action": "itemAdd", "id":"letter"},
+      {"type": "common", "action": "flagOn", "id": "jinja:letter-checked"},
+      {"type": "common", "action": "if-flag-end", "flagKey":"1"},
+      {"type": "common", "action": "checkEnd"},
+      {"type": "common", "action": "end"}
+    ]
+  }
+]
