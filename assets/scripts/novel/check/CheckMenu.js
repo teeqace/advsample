@@ -1,11 +1,16 @@
 import {
   messagePipeline
 } from '../../core/MessagePipeline';
+import NovelCore from '../NovelCore';
 
 cc.Class({
   extends: cc.Component,
 
   properties: {
+    checkZones: {
+      default: [],
+      type: [cc.Node]
+    }
   },
 
   // use this for initialization
@@ -13,6 +18,7 @@ cc.Class({
     this.node.x = 2000;
     this.isChecking = false;
     messagePipeline.on('onCheckTouch', this._onCheckTouch, this);
+    messagePipeline.on('onCheckMenuOpen', this._onCheckMenuOpen, this);
   },
 
   createButton (id, name) {
@@ -20,6 +26,17 @@ cc.Class({
 
   checkEnd() {
     this.isChecking = false;
+  },
+
+  _onCheckMenuOpen() {
+    let scene = NovelCore.instance.getScene();
+    for (let i = 0; i < this.checkZones.length; i++) {
+      if (i === scene.checkZoneIndex) {
+        this.checkZones[i].scaleY = 1;
+      } else {
+        this.checkZones[i].scaleY = 0;
+      }
+    }
   },
 
   _onCheckTouch(event) {

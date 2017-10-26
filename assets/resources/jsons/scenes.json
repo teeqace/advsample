@@ -4,27 +4,31 @@
     "name": "始まり",
     "talks": ["introduction:talk001", "introduction:talk002", "introduction:talk003"],
     "moves": ["scene1", "scene2", "scene3"],
-    "firstScript": "event:introduction"
+    "firstScript": "event:introduction",
+    "checkZoneIndex": 0
   },
   {
     "id": "scene1",
     "name": "シーン１本屋",
     "talks": [],
     "moves": ["scene2", "scene3"],
-    "firstScript": "scenestart:bookstore"
+    "firstScript": "scenestart:bookstore",
+    "checkZoneIndex": 1
   },
   {
     "id": "scene2",
     "name": "シーン２公園",
     "talks": ["scene-park:talk1"],
     "moves": ["scene1", "scene3"],
-    "firstScript": "scenestart:park"
+    "firstScript": "scenestart:park",
+    "checkZoneIndex": 2
   },
   {
     "id": "scene3",
     "name": "シーン３神社",
     "talks": ["jinja:talk0"],
     "moves": ["scene1", "scene2"],
-    "firstScript": "scenestart:jinja"
+    "firstScript": "scenestart:jinja",
+    "checkZoneIndex": 3
   }
 ]

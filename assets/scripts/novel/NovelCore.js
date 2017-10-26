@@ -72,6 +72,10 @@ const NovelCore = cc.Class({
     this.init();
   },
 
+  getScene() {
+    return this._scene;
+  },
+
   init() {
     this.menuBlocker.setScale(1);
     this._scriptLineNo = -1;
@@ -369,7 +373,9 @@ const NovelCore = cc.Class({
 
   _commonCheckEnd(data) {
     this.checkMenu.checkEnd();
-    messagePipeline.sendMessage('onNextScript');
+    setTimeout(() => {
+      messagePipeline.sendMessage('onNextScript');
+    });
   }
 
   // called every frame, uncomment this function to activate update callback

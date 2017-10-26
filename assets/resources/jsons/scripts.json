@@ -420,5 +420,66 @@
       {"type": "common", "action": "checkEnd"},
       {"type": "common", "action": "end"}
     ]
+  },
+  {
+    "id": "check:park:buranko",
+    "name": "ブランコチェック",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"ブランコだ"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"小さい頃は、どれだけ高くまで上がるか、どこまで遠く飛べるかをよく競ってたものだ。"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"今となっては、手がサビ臭くなるのが嫌でやりたくないな。"}},
+      {"type": "common", "action": "checkEnd"},
+      {"type": "common", "action": "end"}
+    ]
+  },
+  {
+    "id": "check:park:tree",
+    "name": "木チェック",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"大きな木が一本ある"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"名前はわからないけど、毛虫とか色々いるんだろうな。"}},
+      {"type": "common", "action": "checkEnd"},
+      {"type": "common", "action": "end"}
+    ]
+  },
+  {
+    "id": "check:park:sand",
+    "name": "砂場チェック",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"砂場か"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"今考えると、なぜ小さい頃はあんなに「さてつ」を集めるのに夢中だったのだろうか"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"何より「犬のフン」という恐怖があるな。"}},
+      {"type": "common", "action": "checkEnd"},
+      {"type": "common", "action": "end"}
+    ]
+  },
+  {
+    "id": "check:park:suberi",
+    "name": "滑り台チェック",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"滑り台だ"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"といってもたいていの滑り台は摩擦でほとんどすべらないことが多い気がする。"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"ビニール袋を敷くとこれまたとても滑りやすくなるんだよな。"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"土で汚れたくないから今はしないけど"}},
+      {"type": "common", "action": "checkEnd"},
+      {"type": "common", "action": "end"}
+    ]
+  },
+  {
+    "id": "check:park:nani",
+    "name": "何かチェック",
+    "script":[
+      {"type": "common", "action": "start"},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"これは・・・"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"名前はわからないが、穴から入って隠れたりする遊具だな"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"この公園でかくれんぼしようとしても、隠れる場所なんてここくらいか。"}},
+      {"type": "text", "action": "disp", "data":{"name":"主人公", "text":"中にはいっぱい落書きが書いてあるんだろうか。"}},
+      {"type": "common", "action": "checkEnd"},
+      {"type": "common", "action": "end"}
+    ]
   }
 ]
